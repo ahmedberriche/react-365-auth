@@ -28,10 +28,9 @@ const animate = {
   },
 };
 
-const LoginForm = ({ setAuth }) => {
+const LoginForm = ({ _ }) => {
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || "/";
 
   const [showPassword, setShowPassword] = useState(false);
 
@@ -51,11 +50,11 @@ const LoginForm = ({ setAuth }) => {
     validationSchema: LoginSchema,
     onSubmit: (values) => {
       console.log("submitting...");
-      setTimeout(() => {
-        console.log("submited!!", values);
-        // setAuth(true);
-        navigate('/dashboard', { replace: true });
-      }, 2000);
+      //   setTimeout(() => {
+      //     console.log("submited!!", values);
+      //     // setAuth(true);
+      //     navigate("/dashboard", { replace: true });
+      //   }, 2000);
     },
   });
 
@@ -125,8 +124,6 @@ const LoginForm = ({ setAuth }) => {
             animate={animate}
             my={3}
           >
-          
-
             <LoadingButton
               fullWidth
               size="large"

@@ -3,6 +3,7 @@ import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
 import Card from "../components/Card";
+import Header from "../components/Header";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
@@ -12,7 +13,7 @@ const RootStyle = styled("div")({
 
 const ContentStyle = styled("div")({
   maxWidth: "90%",
-  with: "90%",
+  width: "90%",
   height: "100%",
   padding: 25,
   margin: "auto",
@@ -41,29 +42,22 @@ const CardStyle = styled(Box)({
 
 const Home = ({ _ }) => {
   return (
-    <RootStyle>
-      <ContentStyle>
-        <CardStyle component={motion.div} {...fadeInUp}>
-          <div className="row">
-            <div className="column">
-              <Card />
+    <>
+      <Header />
+      <RootStyle>
+        <ContentStyle>
+          <CardStyle component={motion.div} {...fadeInUp}>
+            <div className="card-container">
+              {new Array(5).fill(null).map((card) => (
+                <div className="card-content">
+                  <Card />
+                </div>
+              ))}
             </div>
-
-            <div className="column">
-              <Card />
-            </div>
-
-            <div className="column">
-              <Card />
-            </div>
-
-            <div className="column">
-              <Card />
-            </div>
-          </div>
-        </CardStyle>
-      </ContentStyle>
-    </RootStyle>
+          </CardStyle>
+        </ContentStyle>
+      </RootStyle>
+    </>
   );
 };
 
