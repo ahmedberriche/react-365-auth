@@ -4,9 +4,12 @@ import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import MenuIcon from "@mui/icons-material/Menu";
 import * as React from "react";
+import useDrawer, { DrawerContext } from "../context/DrawerProvider";
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const { setIsOpen } = React.useContext(DrawerContext);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -19,11 +22,22 @@ export default function Header() {
     <div>
       <AppBar position="static">
         <Toolbar>
-          <div id="toolbarContainer">
-            <Typography variant="h6" component="div">
-              MANS logged in
-            </Typography>
-
+          <div className="header-container">
+            <div className="header-menu">
+              <IconButton
+                size="large"
+                aria-label="header-menu"
+                aria-controls="menu-appbar"
+                aria-haspopup="true"
+                onClick={() => setIsOpen((old) => !old)}
+                color="inherit"
+              >
+                <MenuIcon />
+              </IconButton>
+              <Typography variant="h6" component="div">
+                MANS logged in
+              </Typography>
+            </div>
             <IconButton
               size="large"
               aria-label="account of current user"

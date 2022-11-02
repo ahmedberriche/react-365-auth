@@ -12,14 +12,17 @@ export default function Card(props) {
         }}
         className="card"
       >
-        <img
-          className="card-img"
-          src="assets/images/numeryx-univ.jpg"
-          alt="Avatar"
-        />
-        <h3>Card 1</h3>
-
-        <p>some description</p>
+        <div className="card-img-container">
+          <img
+            className="card-img"
+            src="assets/images/numeryx-univ.jpg"
+            alt="Avatar"
+          />
+        </div>
+        <div>
+          <h3>Card 1</h3>
+          <p>some description</p>
+        </div>
       </motion.div>
     </a>
   );

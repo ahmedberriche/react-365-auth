@@ -4,11 +4,15 @@ import { motion } from "framer-motion";
 import React from "react";
 import Card from "../components/Card";
 import Header from "../components/Header";
+import ChatBot from "../chatbot";
+import Drawer from "../components/Drawer";
+import MainLayout from "../components/MainLayout";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
-  height: "100vh",
+  height: "calc(100% - 64px)",
   placeItems: "center",
+  display: "flex",
 });
 
 const ContentStyle = styled("div")({
@@ -42,22 +46,26 @@ const CardStyle = styled(Box)({
 
 const Home = ({ _ }) => {
   return (
-    <>
-      <Header />
-      <RootStyle>
-        <ContentStyle>
-          <CardStyle component={motion.div} {...fadeInUp}>
-            <div className="card-container">
-              {new Array(5).fill(null).map((card) => (
-                <div className="card-content">
-                  <Card />
-                </div>
-              ))}
-            </div>
-          </CardStyle>
-        </ContentStyle>
-      </RootStyle>
-    </>
+    <div className="home">
+      <Drawer />
+      <MainLayout>
+        <Header />
+        <RootStyle>
+          <ContentStyle>
+            <CardStyle component={motion.div} {...fadeInUp}>
+              <div className="card-container">
+                {new Array(5).fill(null).map((card) => (
+                  <div className="card-content">
+                    <Card />
+                  </div>
+                ))}
+              </div>
+            </CardStyle>
+            <ChatBot />
+          </ContentStyle>
+        </RootStyle>
+      </MainLayout>
+    </div>
   );
 };
 

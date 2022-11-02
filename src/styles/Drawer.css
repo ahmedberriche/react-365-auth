@@ -1,0 +1,23 @@
+.drawer-main {
+  width: 20%;
+  background-color: #fff;
+  height: 100%;
+  box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px;
+  z-index: 1;
+  transform: translateX(0px);
+  transition: all 0.4s ease-in;
+}
+.drawer-header {
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  border-bottom: 2px solid #1976d2;
+}
+
+.drawer-d-none {
+  visibility: hidden;
+  width: 0;
+  transition: all 0.4s ease-in;
+}
