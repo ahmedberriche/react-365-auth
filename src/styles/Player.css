@@ -1,0 +1,23 @@
+.player-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.player-content {
+  width: 49%;
+}
+
+@media screen and (max-width: 1024px) {
+  .player-container {
+    justify-content: center;
+  }
+  .player-content {
+    width: 75%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .player-content {
+    width: 100%;
+  }
+}
