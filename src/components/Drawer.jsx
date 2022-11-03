@@ -1,15 +1,16 @@
 import {
+  IconButton,
   List,
   ListItemButton,
   ListItemIcon,
   ListItemText,
 } from "@mui/material";
-import DraftsIcon from "@mui/icons-material/Drafts";
 import SendIcon from "@mui/icons-material/Send";
 
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import useDrawer, { DrawerContext } from "../context/DrawerProvider";
+import { DrawerContext } from "../context/DrawerProvider";
+import { isMobileDevice } from "../utils";
 
 const drawerData = [
   { title: "RH", subTitle: "" },
@@ -22,7 +23,20 @@ export default function Drawer() {
 
   return (
     <div className={isOpen ? "drawer-main" : "drawer-d-none"}>
-      <div className="drawer-header">NUMERYX</div>
+      <div className="drawer-header">
+        NUMERYX
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={() => setIsOpen(false)}
+          color="inherit"
+          className="drawer-header-btn"
+        >
+          <CloseIcon />
+        </IconButton>
+      </div>
       <List
         sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
         component="nav"
@@ -30,11 +44,14 @@ export default function Drawer() {
         className="drawer-content"
       >
         {drawerData.map((ele, index) => (
-          <ListItemButton onClick={() => setIsOpen(false)}>
-            <ListItemIcon>
+          <ListItemButton
+            key={index}
+            onClick={() => isMobileDevice && setIsOpen(false)}
+          >
+            {/* <ListItemIcon>
               <SendIcon />
-            </ListItemIcon>
-            <ListItemText primary={ele.title} />
+            </ListItemIcon> */}
+            <ListItemText primary={ele.title} className="drawer-list-item" />
           </ListItemButton>
         ))}
       </List>

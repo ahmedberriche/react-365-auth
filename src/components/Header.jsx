@@ -10,7 +10,7 @@ import useDrawer, { DrawerContext } from "../context/DrawerProvider";
 
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
-  const { setIsOpen } = React.useContext(DrawerContext);
+  const { setIsOpen, isOpen } = React.useContext(DrawerContext);
 
   const handleMenu = (event) => {
     setAnchorEl(event.currentTarget);
@@ -32,6 +32,7 @@ export default function Header() {
                 aria-haspopup="true"
                 onClick={() => setIsOpen((old) => !old)}
                 color="inherit"
+                className={isOpen ? "d-none" : "d-block"}
               >
                 <MenuIcon />
               </IconButton>

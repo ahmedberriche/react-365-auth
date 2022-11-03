@@ -5,7 +5,7 @@ export default function MainLayout({ children }) {
   const { isOpen } = React.useContext(DrawerContext);
 
   return (
-    <div className={isOpen ? "main-layout" : "main-layout-full"}>
+    <div className={isOpen ? "main-layout-shrink" : "main-layout-full"}>
       {children}
     </div>
   );

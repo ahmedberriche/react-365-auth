@@ -1,12 +1,13 @@
 import React from "react";
+import { motion } from "framer-motion";
 
-export default function Banner() {
+export default function Banner(props) {
   return (
-    <div className="banner-image">
-      <div className="banner-text">
+    <motion.div className="banner-image" {...props}>
+      {/* <div className="banner-text">
         <h1>put image here</h1>
         <p>And I'm a Photographer</p>
-      </div>
-    </div>
+      </div> */}
+    </motion.div>
   );
 }

@@ -24,8 +24,6 @@ const ContentStyle = styled("div")({
   padding: 25,
   margin: "auto",
   background: "#fff",
-  // display: "flex",
-  // alignItems: "center",
 });
 
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -55,9 +53,21 @@ const Home = ({ _ }) => {
       subTitle: "",
       image: "assets/images/numeryx-univ.jpg",
       cardData: [
-        { iconSrc: "CRA.jpg", title: "CRA" },
-        { iconSrc: "DocAdm.png", title: "document administratifs" },
-        { iconSrc: "coffre-fort.png", title: "Coffre-fort numérique" },
+        {
+          iconSrc: "CRA.jpg",
+          title: "CRA",
+          uri: "https://ui.boondmanager.com/dashboard",
+        },
+        {
+          iconSrc: "DocAdm.png",
+          title: "document administratifs",
+          uri: "https://apps.powerapps.com/play/e/default-f050ee11-8c72-4be6-80ce-5238fb70166a/a/1f6aa88e-2697-4767-a43e-75f98b96f2b2?source=teamsopenwebsite&screenColor=rgba(0,+176,+240,+1)&hint=0492cae0-3b41-4a01-811f-e1ff760ac293",
+        },
+        {
+          iconSrc: "coffre-fort.png",
+          title: "Coffre-fort numérique",
+          uri: "https://edocperso.fr/login",
+        },
       ],
     },
     {
@@ -65,9 +75,21 @@ const Home = ({ _ }) => {
       subTitle: "",
       image: "assets/images/numeryx-univ.jpg",
       cardData: [
-        { iconSrc: "LMS.png", title: "LMS" },
-        { iconSrc: "catalogue-formation.png", title: "Catalogue de formation" },
-        { iconSrc: "demande-formation.jpg", title: "Demande de formation" },
+        {
+          iconSrc: "LMS.png",
+          title: "LMS",
+          uri: "https://tech.numeryx.fr:6500/moodle/",
+        },
+        {
+          iconSrc: "catalogue-formation.png",
+          title: "Catalogue de formation",
+          uri: "https://university.numeryx.fr/fr/nos-formations-professionnelles",
+        },
+        {
+          iconSrc: "demande-formation.jpg",
+          title: "Demande de formation",
+          uri: "https://apps.powerapps.com/play/e/default-f050ee11-8c72-4be6-80ce-5238fb70166a/a/c03cacde-4399-4440-934b-d4808dd04de5?tenantId=f050ee11-8c72-4be6-80ce-5238fb70166a",
+        },
       ],
     },
     {
@@ -75,8 +97,16 @@ const Home = ({ _ }) => {
       subTitle: "",
       image: "assets/images/numeryx-univ.jpg",
       cardData: [
-        { iconSrc: "problem-claim.png", title: "Porblem Claim" },
-        { iconSrc: "GLPI.png", title: "GLPI" },
+        {
+          iconSrc: "problem-claim.png",
+          title: "Porblem Claim",
+          uri: "https://apps.powerapps.com/play/0cc9e371-c2fd-4054-bccc-3c11017bd9f4?tenantId=f050ee11-8c72-4be6-80ce-5238fb70166a",
+        },
+        {
+          iconSrc: "GLPI.png",
+          title: "GLPI",
+          uri: "http://support.numeryx.fr/Glpi-Numeryx/index.php?redirect=%2Ffront%2Ftracking.injector.php&error=3",
+        },
       ],
     },
     {
@@ -84,12 +114,21 @@ const Home = ({ _ }) => {
       subTitle: "",
       image: "assets/images/numeryx-univ.jpg",
       cardData: [
-        { iconSrc: "yammer.jpg", title: "Yammer" },
-        { iconSrc: "linkedin.png", title: "LINKEDIN" },
+        {
+          iconSrc: "yammer.jpg",
+          title: "Yammer",
+          uri: "https://www.yammer.com/login",
+        },
+        {
+          iconSrc: "linkedin.png",
+          title: "LINKEDIN",
+          uri: "https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A18574742&keywords=numeryx&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=6e3e7c2a-d776-402e-8da1-070d3a255a7c&sid=5_i",
+        },
       ],
     },
   ];
   const playerData = [{ src: "mov_bbb.mp4" }, { src: "mov_bbb.mp4" }];
+
   return (
     <div className="home">
       <Drawer />
@@ -97,7 +136,7 @@ const Home = ({ _ }) => {
         <Header />
         <RootStyle>
           <ContentStyle>
-            <Banner />
+            <Banner {...fadeInUp} />
             <CardStyle component={motion.div} {...fadeInUp}>
               <div className="card-container">
                 {dataSet.map((item, index) => (
@@ -107,11 +146,13 @@ const Home = ({ _ }) => {
                 ))}
               </div>
             </CardStyle>
-            <div className="player-container">
+            <motion.div className="player-container" {...fadeInUp}>
               {playerData.map((vid, index) => (
-                <Player {...vid} />
+                <div key={index} className="player-content">
+                  <Player {...vid} />
+                </div>
               ))}
-            </div>
+            </motion.div>
             <ChatBot />
           </ContentStyle>
         </RootStyle>
