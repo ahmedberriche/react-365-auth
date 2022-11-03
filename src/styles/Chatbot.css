@@ -1,6 +1,6 @@
 .chatbot-btn {
   display: block;
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   z-index: 999;
   right: 40px;
@@ -9,13 +9,30 @@
 
 .chatbot-container {
   display: block;
-  position: absolute;
+  position: fixed;
   bottom: 40px;
   margin: 60px 0;
   right: 40px;
   z-index: 999;
 }
 
+.chatbot-header {
+  background-color: #efefef;
+  padding: 10px;
+  border-radius: 3px;
+  font-size: 16px;
+  font-weight: bold;
+}
+.chatbot-header-btn {
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+}
+
 .react-chatbot-kit-chat-container {
   box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px;
 }
+/* .react-chatbot-kit-chat-btn-send {
+  pointer-events: none;
+  opacity: 0.4;
+} */

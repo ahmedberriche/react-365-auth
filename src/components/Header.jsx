@@ -1,5 +1,5 @@
 import AccountCircle from "@mui/icons-material/AccountCircle";
-import { Menu, MenuItem } from "@mui/material";
+import { Avatar, Menu, MenuItem } from "@mui/material";
 import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Toolbar from "@mui/material/Toolbar";
@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import MenuIcon from "@mui/icons-material/Menu";
 import * as React from "react";
 import useDrawer, { DrawerContext } from "../context/DrawerProvider";
+
 export default function Header() {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const { setIsOpen } = React.useContext(DrawerContext);
@@ -46,7 +47,10 @@ export default function Header() {
               onClick={handleMenu}
               color="inherit"
             >
-              <AccountCircle />
+              <Avatar
+                alt="Cindy Baker"
+                src="assets/images/microsoft-logo.png"
+              />
             </IconButton>
             <Menu
               id="menu-appbar"

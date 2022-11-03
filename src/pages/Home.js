@@ -7,6 +7,7 @@ import Header from "../components/Header";
 import ChatBot from "../chatbot";
 import Drawer from "../components/Drawer";
 import MainLayout from "../components/MainLayout";
+import Banner from "../components/Banner";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
@@ -22,6 +23,8 @@ const ContentStyle = styled("div")({
   padding: 25,
   margin: "auto",
   background: "#fff",
+  // display: "flex",
+  // alignItems: "center",
 });
 
 let easing = [0.6, -0.05, 0.01, 0.99];
@@ -45,6 +48,24 @@ const CardStyle = styled(Box)({
 });
 
 const Home = ({ _ }) => {
+  const dataSet = [
+    { title: "RH", subTitle: "", image: "assets/images/numeryx-univ.jpg" },
+    {
+      title: "Numeryx université",
+      subTitle: "",
+      image: "assets/images/numeryx-univ.jpg",
+    },
+    {
+      title: "Demandes et réclamations",
+      subTitle: "",
+      image: "assets/images/numeryx-univ.jpg",
+    },
+    {
+      title: "Réseaux sociaux ",
+      subTitle: "",
+      image: "assets/images/numeryx-univ.jpg",
+    },
+  ];
   return (
     <div className="home">
       <Drawer />
@@ -52,11 +73,12 @@ const Home = ({ _ }) => {
         <Header />
         <RootStyle>
           <ContentStyle>
+            <Banner />
             <CardStyle component={motion.div} {...fadeInUp}>
               <div className="card-container">
-                {new Array(5).fill(null).map((card) => (
-                  <div className="card-content">
-                    <Card />
+                {dataSet.map((item, index) => (
+                  <div key={index} className="card-content">
+                    <Card {...item} />
                   </div>
                 ))}
               </div>

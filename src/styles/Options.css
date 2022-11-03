@@ -7,6 +7,11 @@
   margin: 3px;
   border-radius: 25px;
   padding: 0.5rem;
-  border-color: green;
+  border-color: #2898ec;
   background: transparent;
+  cursor: pointer;
+}
+
+.option-button:hover {
+  background-color: rgba(40, 152, 236, 0.4);
 }

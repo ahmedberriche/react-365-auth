@@ -1,8 +1,10 @@
 import React from "react";
 import { createChatBotMessage } from "react-chatbot-kit";
 import { LearningOptions } from "../components/Options";
+import CloseIcon from "@mui/icons-material/Close";
 
 import LinkList from "../components/LinkList";
+import { IconButton } from "@mui/material";
 
 const config = {
   botName: "LearningBot",
@@ -11,6 +13,25 @@ const config = {
       widget: "learningOptions",
     }),
   ],
+  customComponents: {
+    // Replaces the default header
+    header: () => (
+      <div className="chatbot-header" style={{}}>
+        This is the header
+        <IconButton
+          size="large"
+          aria-label="account of current user"
+          aria-controls="menu-appbar"
+          aria-haspopup="true"
+          onClick={() => console.log("is closing ..")}
+          color="inherit"
+          className="chatbot-header-btn"
+        >
+          <CloseIcon />
+        </IconButton>
+      </div>
+    ),
+  },
   widgets: [
     {
       widgetName: "learningOptions",

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Card(props) {
   const { image, title, subTitle } = props;
   return (
-    <a href="https://www.w3schools.com">
+    <a href="#">
       <motion.div
         whileHover={{
           transform: "translateY(-5px)",
@@ -13,15 +13,11 @@ export default function Card(props) {
         className="card"
       >
         <div className="card-img-container">
-          <img
-            className="card-img"
-            src="assets/images/numeryx-univ.jpg"
-            alt="Avatar"
-          />
+          <img className="card-img" src={image} alt="Avatar" />
         </div>
         <div>
-          <h3>Card 1</h3>
-          <p>some description</p>
+          <h3>{title || "CRA"}</h3>
+          <p>{subTitle || "some description"}</p>
         </div>
       </motion.div>
     </a>

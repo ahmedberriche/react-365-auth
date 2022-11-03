@@ -8,10 +8,17 @@ import DraftsIcon from "@mui/icons-material/Drafts";
 import SendIcon from "@mui/icons-material/Send";
 
 import React from "react";
+import CloseIcon from "@mui/icons-material/Close";
 import useDrawer, { DrawerContext } from "../context/DrawerProvider";
 
+const drawerData = [
+  { title: "RH", subTitle: "" },
+  { title: "NUMERYX UNIV", subTitle: "", icon: "" },
+  { title: "YAMMER", subTitle: "", icon: "" },
+  { title: "RECLAMATION", subTitle: "", icon: "" },
+];
 export default function Drawer() {
-  const { isOpen } = React.useContext(DrawerContext);
+  const { isOpen, setIsOpen } = React.useContext(DrawerContext);
 
   return (
     <div className={isOpen ? "drawer-main" : "drawer-d-none"}>
@@ -22,18 +29,14 @@ export default function Drawer() {
         aria-labelledby="nested-list-subheader"
         className="drawer-content"
       >
-        <ListItemButton>
-          <ListItemIcon>
-            <SendIcon />
-          </ListItemIcon>
-          <ListItemText primary="Liste formation" />
-        </ListItemButton>
-        <ListItemButton>
-          <ListItemIcon>
-            <DraftsIcon />
-          </ListItemIcon>
-          <ListItemText primary="Liste formation" />
-        </ListItemButton>
+        {drawerData.map((ele, index) => (
+          <ListItemButton onClick={() => setIsOpen(false)}>
+            <ListItemIcon>
+              <SendIcon />
+            </ListItemIcon>
+            <ListItemText primary={ele.title} />
+          </ListItemButton>
+        ))}
       </List>
     </div>
   );
