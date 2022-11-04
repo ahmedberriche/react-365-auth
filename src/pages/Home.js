@@ -127,7 +127,10 @@ const Home = ({ _ }) => {
       ],
     },
   ];
-  const playerData = [{ src: "mov_bbb.mp4" }, { src: "mov_bbb.mp4" }];
+  const playerData = [
+    { src: "http://techslides.com/demos/sample-videos/small.ogv" },
+    { src: "http://techslides.com/demos/sample-videos/small.ogv" },
+  ];
 
   return (
     <div className="home">

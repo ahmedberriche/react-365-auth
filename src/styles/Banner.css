@@ -2,7 +2,7 @@
 .banner-image {
   background: rgba(0, 0, 0, 0.5);
 
-  height: 200px;
+  min-height: 200px;
 
   background-position: center;
   background-repeat: no-repeat;
@@ -19,4 +19,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   color: white;
+}
+
+@media screen and (min-width: 1440px) {
+  .banner-image {
+    min-height: 300px;
+  }
 }
