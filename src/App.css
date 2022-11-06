@@ -6,7 +6,6 @@
   float: left;
   width: 25%;
   padding: 0 10px;
-  margin-bottom: 20px;
 }
 
 .card-container {
@@ -61,7 +60,6 @@
   .card-content {
     width: 50%;
     display: block;
-    margin-bottom: 20px;
   }
   .card-backdrop-main {
     padding: 5px;
@@ -71,7 +69,6 @@
   .card-content {
     width: 100%;
     display: block;
-    margin-bottom: 20px;
   }
 }
 

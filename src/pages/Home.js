@@ -9,6 +9,7 @@ import Drawer from "../components/Drawer";
 import MainLayout from "../components/MainLayout";
 import Banner from "../components/Banner";
 import Player from "../components/Player";
+import SectionTitle from "../components/SectionTitle";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
@@ -140,6 +141,7 @@ const Home = ({ _ }) => {
         <RootStyle>
           <ContentStyle>
             <Banner {...fadeInUp} />
+            <SectionTitle title="Section 1 " />
             <CardStyle component={motion.div} {...fadeInUp}>
               <div className="card-container">
                 {dataSet.map((item, index) => (
@@ -149,6 +151,7 @@ const Home = ({ _ }) => {
                 ))}
               </div>
             </CardStyle>
+            <SectionTitle title="Section 2 " />
             <motion.div className="player-container" {...fadeInUp}>
               {playerData.map((vid, index) => (
                 <div key={index} className="player-content">
