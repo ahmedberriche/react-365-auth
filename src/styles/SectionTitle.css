@@ -23,3 +23,10 @@
   background-color: #999;
   width: 140px;
 }
+
+@media screen and (max-width: 600px) {
+  .section-title:after,
+  .section-title:before {
+    width: 40px;
+  }
+}

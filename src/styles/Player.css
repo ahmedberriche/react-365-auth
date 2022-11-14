@@ -5,7 +5,11 @@
 }
 
 .player-content {
-  width: 49%;
+  width: 50%;
+}
+
+.player-content video {
+  padding: 10px;
 }
 
 @media screen and (max-width: 1024px) {

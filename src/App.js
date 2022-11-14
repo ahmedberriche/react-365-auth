@@ -1,5 +1,5 @@
 import { CssBaseline } from "@mui/material";
-import { Route, Routes, BrowserRouter } from "react-router-dom";
+import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
 import "./App.css";
 import DrawerProvider from "./context/DrawerProvider";
 import Home from "./pages/Home";
@@ -11,7 +11,7 @@ function App() {
       <CssBaseline />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<Home />} />
         </Routes>
       </BrowserRouter>
