@@ -74,7 +74,7 @@ const Home = ({ _ }) => {
         <RootStyle>
           <ContentStyle>
             <Banner {...translateY} />
-            <SectionTitle title="Section 1 " />
+            <SectionTitle title="ToolBox" />
             <CardStyle component={motion.div} {...fadeInUp}>
               <div className="card-container">
                 {cardsDataSet.map((item, index) => (
@@ -84,7 +84,7 @@ const Home = ({ _ }) => {
                 ))}
               </div>
             </CardStyle>
-            <SectionTitle title="Section 2 " />
+            <SectionTitle title="Nos témoins" />
             <motion.div className="player-container" {...fadeInUp}>
               {playerData.map((vid, index) => (
                 <div key={index} className="player-content">

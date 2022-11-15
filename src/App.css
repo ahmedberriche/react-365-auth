@@ -123,3 +123,12 @@ a:active {
 .card-backdrop a {
   color: #fff;
 }
+
+.slick-container {
+  height: 60% !important;
+}
+.slick-slider,
+.slick-list,
+.slick-track {
+  height: 100% !important;
+}
