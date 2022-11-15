@@ -9,7 +9,7 @@
 }
 
 .player-content video {
-  padding: 10px;
+  padding: 0 10px 10px 10px;
 }
 
 @media screen and (max-width: 1024px) {

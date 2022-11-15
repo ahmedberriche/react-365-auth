@@ -25,7 +25,7 @@ export default function Header() {
         <Toolbar>
           <div className="header-container">
             <div className="header-menu">
-              <IconButton
+              {/* <IconButton
                 size="large"
                 aria-label="header-menu"
                 aria-controls="menu-appbar"
@@ -35,12 +35,12 @@ export default function Header() {
                 className={isOpen ? "d-none" : "d-block"}
               >
                 <MenuIcon />
-              </IconButton>
+              </IconButton> */}
               <Typography variant="h6" component="div">
-                MANS logged in
+                Numeryx
               </Typography>
             </div>
-            <IconButton
+            {/* <IconButton
               size="large"
               aria-label="account of current user"
               aria-controls="menu-appbar"
@@ -69,7 +69,7 @@ export default function Header() {
               onClose={handleClose}
             >
               <MenuItem onClick={handleClose}>Logout</MenuItem>
-            </Menu>
+            </Menu> */}
           </div>
         </Toolbar>
       </AppBar>
