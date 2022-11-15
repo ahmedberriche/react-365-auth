@@ -8,7 +8,7 @@ export default function Card(props) {
       <div className="card-img-container">
         <img
           className="card-img"
-          src="assets/images/numeryx-univ.jpg"
+          src="assets/images/adm-managment.png"
           alt="Avatar"
         />
       </div>
