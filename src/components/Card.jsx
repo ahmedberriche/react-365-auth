@@ -2,9 +2,10 @@ import { Grid } from "@mui/material";
 import React from "react";
 
 export default function Card(props) {
-  const { image, title, subTitle, cardData } = props;
+  const { image, title, subTitle, cardData, handleOpen } = props;
+
   return (
-    <div className="card">
+    <div className="card" onClick={() => handleOpen(cardData)}>
       <div className="card-img-container">
         <img className="card-img" src={image} alt="Avatar" />
       </div>

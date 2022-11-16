@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
-import { Box } from "@mui/material";
+import { Box, Grid, Modal } from "@mui/material";
 import { motion } from "framer-motion";
-import React from "react";
+import React, { useState } from "react";
 import ChatBot from "../chatbot";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
@@ -32,12 +32,29 @@ const CardStyle = styled(Box)({
   textAlign: "center",
 });
 
+const style = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
+  minWidth: 400,
+  bgcolor: "background.paper",
+  boxShadow: 24,
+  p: 4,
+};
+const playerData = [
+  { src: "http://techslides.com/demos/sample-videos/small.ogv" },
+  { src: "http://techslides.com/demos/sample-videos/small.ogv" },
+];
 const Home = ({ _ }) => {
-  const playerData = [
-    { src: "http://techslides.com/demos/sample-videos/small.ogv" },
-    { src: "http://techslides.com/demos/sample-videos/small.ogv" },
-  ];
+  const [isOpenModal, setIsOpenModal] = useState(false);
+  const [modalData, setModalData] = useState(null);
 
+  const handleOpen = (data) => {
+    setIsOpenModal(true);
+    setModalData(data);
+  };
+  const handleClose = () => setIsOpenModal(false);
   return (
     <div className="home">
       <Drawer />
@@ -51,7 +68,7 @@ const Home = ({ _ }) => {
               <div className="card-container">
                 {cardsDataSet.map((item, index) => (
                   <div key={index} className="card-content">
-                    <Card {...item} />
+                    <Card {...item} handleOpen={(item) => handleOpen(item)} />
                   </div>
                 ))}
               </div>
@@ -68,6 +85,39 @@ const Home = ({ _ }) => {
           </ContentStyle>
         </RootStyle>
       </MainLayout>
+      <Modal
+        open={isOpenModal}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          {modalData?.map((item, index) => {
+            return (
+              <a key={index} href={item?.uri} className="card-backdrop-main">
+                <Grid container spacing={2} alignItems={"center"}>
+                  <Grid item xs={4} md={3}>
+                    <img
+                      className="card-backdrop-icons"
+                      src={"assets/icons/" + item.iconSrc}
+                      alt={index}
+                    />
+                  </Grid>
+                  <Grid
+                    style={{ textAlign: "left" }}
+                    item
+                    xs={8}
+                    md={9}
+                    color={"#000"}
+                  >
+                    {item.title}
+                  </Grid>
+                </Grid>
+              </a>
+            );
+          })}
+        </Box>
+      </Modal>
     </div>
   );
 };
