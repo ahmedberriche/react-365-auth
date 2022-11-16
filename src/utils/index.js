@@ -7,7 +7,7 @@ export const cardsDataSet = [
   {
     title: "RH",
     subTitle: "",
-    image: "assets/images/numeryx-univ.jpg",
+    image: "assets/images/adm-managment.png",
     cardData: [
       {
         iconSrc: "CRA.jpg",
@@ -29,7 +29,7 @@ export const cardsDataSet = [
   {
     title: "Numeryx université",
     subTitle: "",
-    image: "assets/images/numeryx-univ.jpg",
+    image: "assets/images/training-managment.png",
     cardData: [
       {
         iconSrc: "LMS.png",
@@ -51,7 +51,7 @@ export const cardsDataSet = [
   {
     title: "Demandes et réclamations",
     subTitle: "",
-    image: "assets/images/numeryx-univ.jpg",
+    image: "assets/images/complain-managment.png",
     cardData: [
       {
         iconSrc: "problem-claim.png",
@@ -68,7 +68,7 @@ export const cardsDataSet = [
   {
     title: "Réseaux sociaux ",
     subTitle: "",
-    image: "assets/images/numeryx-univ.jpg",
+    image: "assets/images/social-network.png",
     cardData: [
       {
         iconSrc: "yammer.jpg",

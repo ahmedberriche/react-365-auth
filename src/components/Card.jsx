@@ -6,11 +6,7 @@ export default function Card(props) {
   return (
     <div className="card">
       <div className="card-img-container">
-        <img
-          className="card-img"
-          src="assets/images/adm-managment.png"
-          alt="Avatar"
-        />
+        <img className="card-img" src={image} alt="Avatar" />
       </div>
       <div>
         <span style={{ fontWeight: "700" }}>{title}</span>
