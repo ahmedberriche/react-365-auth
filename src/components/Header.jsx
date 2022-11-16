@@ -36,9 +36,14 @@ export default function Header() {
               >
                 <MenuIcon />
               </IconButton> */}
-              <Typography variant="h6" component="div">
+              <img
+                style={{ width: 50 }}
+                src={"/logo1024.png"}
+                alt={"numeryx-logo"}
+              />
+              {/* <Typography variant="h6" component="div">
                 Numeryx
-              </Typography>
+              </Typography> */}
             </div>
             {/* <IconButton
               size="large"
