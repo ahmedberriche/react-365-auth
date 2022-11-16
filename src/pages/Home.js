@@ -2,15 +2,16 @@ import styled from "@emotion/styled";
 import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 import React from "react";
-import Card from "../components/Card";
-import Header from "../components/Header";
 import ChatBot from "../chatbot";
-import Drawer from "../components/Drawer";
-import MainLayout from "../components/MainLayout";
 import Banner from "../components/Banner";
+import Card from "../components/Card";
+import Drawer from "../components/Drawer";
+import Header from "../components/Header";
+import MainLayout from "../components/MainLayout";
 import Player from "../components/Player";
 import SectionTitle from "../components/SectionTitle";
 import { cardsDataSet } from "../utils";
+import { fadeInUp, translateY } from "../utils/animation";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
@@ -27,35 +28,6 @@ const ContentStyle = styled("div")({
   background: "#fff",
 });
 
-let easing = [0.6, -0.05, 0.01, 0.99];
-const fadeInUp = {
-  initial: {
-    y: 100,
-    opacity: 0,
-    transition: { duration: 0.6, ease: easing },
-  },
-  animate: {
-    y: 0,
-    opacity: 1,
-    transition: {
-      duration: 0.6,
-      ease: easing,
-    },
-  },
-};
-const translateY = {
-  initial: {
-    x: -1000,
-    transition: { duration: 0.6, ease: easing },
-  },
-  animate: {
-    x: 0,
-    transition: {
-      duration: 0.8,
-      ease: easing,
-    },
-  },
-};
 const CardStyle = styled(Box)({
   textAlign: "center",
 });

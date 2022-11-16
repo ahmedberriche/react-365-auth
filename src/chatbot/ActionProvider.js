@@ -1,5 +1,8 @@
-class ActionProvider {
-  constructor(createChatBotMessage, setStateFunc) {
+import { Component } from "react";
+
+class ActionProvider extends Component {
+  constructor(createChatBotMessage, setStateFunc, ...props) {
+    super(props);
     this.createChatBotMessage = createChatBotMessage;
     this.setState = setStateFunc;
   }
@@ -9,8 +12,11 @@ class ActionProvider {
     this.addMessageToState(message);
   };
 
+  handleCloseChatbot = () => {
+    this.props[3].setIsOpenChatbot(false); // to do
+  };
+
   handleJavascriptLinks = () => {
-    console.log("test");
     const message = this.createChatBotMessage(
       "Fantastic, I've got the following resources for you on Javascript:",
       {

@@ -16,20 +16,15 @@ export default function Banner(props) {
   return (
     <motion.div className="banner-container" {...props}>
       <Slider {...settings} className="custom-slides">
-        {cardsDataSet.map(
-          (item, index) => (
-            console.log(item.image),
-            (
-              <div key={index}>
-                <div
-                  style={{ backgroundImage: `url(${item?.image})` }}
-                  className="banner-image"
-                  {...props}
-                ></div>
-              </div>
-            )
-          )
-        )}
+        {cardsDataSet.map((item, index) => (
+          <div key={index}>
+            <div
+              style={{ backgroundImage: `url(${item?.image})` }}
+              className="banner-image"
+              {...props}
+            ></div>
+          </div>
+        ))}
       </Slider>
     </motion.div>
   );

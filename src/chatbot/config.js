@@ -15,7 +15,7 @@ const config = {
   ],
   customComponents: {
     // Replaces the default header
-    header: () => (
+    header: (props) => (
       <div className="chatbot-header" style={{}}>
         This is the header
         <IconButton
@@ -23,7 +23,7 @@ const config = {
           aria-label="account of current user"
           aria-controls="menu-appbar"
           aria-haspopup="true"
-          onClick={() => console.log("is closing ..")}
+          onClick={() => props.handleCloseChatbot()}
           color="inherit"
           className="chatbot-header-btn"
         >
