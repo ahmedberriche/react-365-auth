@@ -1,11 +1,16 @@
 import { Grid } from "@mui/material";
 import React from "react";
+import { isMobileDevice } from "../utils";
 
 export default function Card(props) {
   const { image, title, subTitle, cardData, handleOpen } = props;
-
   return (
-    <div className="card" onClick={() => handleOpen(cardData)}>
+    <div
+      className="card"
+      onClick={() => {
+        isMobileDevice && handleOpen(cardData);
+      }}
+    >
       <div className="card-img-container">
         <img className="card-img" src={image} alt="Avatar" />
       </div>
