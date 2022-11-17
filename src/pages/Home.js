@@ -5,7 +5,6 @@ import React, { useState } from "react";
 import ChatBot from "../chatbot";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
-import Drawer from "../components/Drawer";
 import Header from "../components/Header";
 import MainLayout from "../components/MainLayout";
 import Player from "../components/Player";
@@ -15,9 +14,9 @@ import { fadeInUp, translateY } from "../utils/animation";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
-  height: "100%",
   placeItems: "center",
-  display: "flex",
+  maxHeight: "calc(100vh - 64px)",
+  overflow: "scroll",
 });
 
 const ContentStyle = styled("div")({
@@ -57,7 +56,6 @@ const Home = ({ _ }) => {
   const handleClose = () => setIsOpenModal(false);
   return (
     <div className="home">
-      <Drawer />
       <MainLayout>
         <Header />
         <RootStyle>

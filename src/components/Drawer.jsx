@@ -22,7 +22,7 @@ export default function Drawer() {
   const { isOpen, setIsOpen } = React.useContext(DrawerContext);
 
   return (
-    <div className={isOpen ? "drawer-main" : "drawer-d-none"}>
+    <div className={"drawer-d-none"}>
       <div className="drawer-header">
         NUMERYX
         <IconButton
@@ -48,9 +48,6 @@ export default function Drawer() {
             key={index}
             onClick={() => isMobileDevice && setIsOpen(false)}
           >
-            {/* <ListItemIcon>
-              <SendIcon />
-            </ListItemIcon> */}
             <ListItemText primary={ele.title} className="drawer-list-item" />
           </ListItemButton>
         ))}
