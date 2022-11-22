@@ -2,7 +2,7 @@
   display: block;
   position: fixed;
   bottom: 40px;
-  z-index: 999;
+  z-index: 10;
   right: 40px;
   cursor: pointer;
 }
