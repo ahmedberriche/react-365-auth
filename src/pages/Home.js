@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import ChatBot from "../chatbot";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
+import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainLayout from "../components/MainLayout";
 import Player from "../components/Player";
@@ -81,6 +82,7 @@ const Home = ({ _ }) => {
             </motion.div>
             <ChatBot />
           </ContentStyle>
+          <Footer />
         </RootStyle>
       </MainLayout>
       <Modal

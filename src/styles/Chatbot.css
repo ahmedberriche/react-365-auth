@@ -32,7 +32,19 @@
 .react-chatbot-kit-chat-container {
   box-shadow: rgb(0 0 0 / 20%) 0px 4px 8px 0px;
 }
-/* .react-chatbot-kit-chat-btn-send {
-  pointer-events: none;
-  opacity: 0.4;
-} */
+
+/*************************/
+@media screen and (max-width: 600px) {
+  .react-chatbot-kit-chat-inner-container,
+  .react-chatbot-kit-chat-container {
+    height: 100% !important;
+    width: 100% !important;
+  }
+  .chatbot-container {
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    right: 0;
+    bottom: 0;
+  }
+}
