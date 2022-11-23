@@ -6,11 +6,13 @@ import { cardsDataSet } from "../utils";
 const settings = {
   dots: true,
   infinite: true,
+  initialSlide: 0,
   speed: 500,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplay: false,
+  autoplay: true,
   arrows: false,
+  dotsClass: "button__dots",
 };
 export default function Banner(props) {
   return (

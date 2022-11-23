@@ -17,3 +17,42 @@
   transform: translate(-50%, -50%);
   color: white;
 }
+/****react slick dots****/
+.button__dots {
+  display: inline-block;
+  padding: 0;
+  border-radius: 40px;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+}
+
+.button__dots li {
+  list-style: none;
+  cursor: pointer;
+  display: inline-block;
+  margin: 0 3px;
+  padding: 0;
+}
+
+.button__dots li button {
+  border: none;
+  background: #1976d2;
+  color: transparent;
+  cursor: pointer;
+  display: block;
+  height: 15px;
+  width: 30px;
+  border-radius: 7.5px;
+}
+
+.button__dots li.slick-active button {
+  background-color: rgb(8, 255, 140);
+}
+
+.button__dots li button:hover,
+.button__dots li button:focus {
+  background: rgba(8, 255, 140);
+  outline: 0;
+}
