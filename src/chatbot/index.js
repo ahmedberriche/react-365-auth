@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import React from "react";
 import Chatbot from "react-chatbot-kit";
 import "react-chatbot-kit/build/main.css";
-import { DrawerContext } from "../context/DrawerProvider";
+import { ChatBotContext } from "../context/ChatBotProvider";
 import ActionProvider from "./ActionProvider";
 import config from "./config";
 import MessageParser from "./MessageParser";
@@ -12,7 +12,7 @@ const variants = {
   closed: { opacity: 0 },
 };
 export default function ChatBot() {
-  const { setIsOpenChatbot, isOpenChatbot } = React.useContext(DrawerContext);
+  const { setIsOpenChatbot, isOpenChatbot } = React.useContext(ChatBotContext);
   return (
     <div className="chatbot">
       <motion.div

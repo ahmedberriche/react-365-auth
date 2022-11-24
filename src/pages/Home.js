@@ -17,14 +17,14 @@ import CustomModal from "../components/Modal";
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
   placeItems: "center",
-  maxHeight: "calc(100vh - 64px)",
+  height: "calc(100vh - 64px)",
   overflowY: "scroll",
 });
 
 const ContentStyle = styled("div")({
   maxWidth: "90%",
   width: "90%",
-  height: "100%",
+  minHeight: "100%",
   margin: "auto",
   background: "#fff",
 });

@@ -3,12 +3,9 @@ export const DrawerContext = React.createContext();
 
 export default function DrawerProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [isOpenChatbot, setIsOpenChatbot] = useState(false);
 
   return (
-    <DrawerContext.Provider
-      value={{ isOpen, setIsOpen, isOpenChatbot, setIsOpenChatbot }}
-    >
+    <DrawerContext.Provider value={{ isOpen, setIsOpen }}>
       {children}
     </DrawerContext.Provider>
   );

@@ -1,24 +1,27 @@
-import { CircularProgress, CssBaseline } from "@mui/material";
-import { Route, Routes, BrowserRouter, Navigate } from "react-router-dom";
-import "./App.css";
-import "slick-carousel/slick/slick.css";
+import { CssBaseline } from "@mui/material";
+import { Suspense } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import "slick-carousel/slick/slick-theme.css";
+import "slick-carousel/slick/slick.css";
+import "./App.css";
+import ChatBotProvider from "./context/ChatBotProvider";
 import DrawerProvider from "./context/DrawerProvider";
 import Home from "./pages/Home";
-import { Suspense } from "react";
 
 function App() {
   return (
     <DrawerProvider>
-      <CssBaseline />
-      <BrowserRouter>
-        <Suspense fallback={<div>...is loading</div>}>
-          <Routes>
-            <Route path="/" element={<Navigate to="/dashboard" replace />} />
-            <Route path="/dashboard" element={<Home />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
+      <ChatBotProvider>
+        <CssBaseline />
+        <BrowserRouter>
+          <Suspense fallback={<div>...is loading</div>}>
+            <Routes>
+              <Route path="/" element={<Navigate to="/dashboard" replace />} />
+              <Route path="/dashboard" element={<Home />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </ChatBotProvider>
     </DrawerProvider>
   );
 }

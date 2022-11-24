@@ -9,7 +9,7 @@ import SendIcon from "@mui/icons-material/Send";
 
 import React from "react";
 import CloseIcon from "@mui/icons-material/Close";
-import { DrawerContext } from "../context/DrawerProvider";
+import { DrawerContext } from "../context/ChatBotProvider";
 import { isMobileDevice } from "../utils";
 
 const drawerData = [

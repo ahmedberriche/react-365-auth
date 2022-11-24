@@ -5,23 +5,20 @@
   text-align: center;
 }
 
-.section-title:after {
-  display: inline-block;
-  margin: 0 0 8px 20px;
-  height: 3px;
+.section-title:after,
+.section-title:before {
   content: " ";
   text-shadow: none;
   background-color: #999;
   width: 140px;
+  height: 3px;
+  display: inline-block;
+}
+.section-title:after {
+  margin: 0 0 8px 20px;
 }
 .section-title:before {
-  display: inline-block;
   margin: 0 20px 8px 0;
-  height: 3px;
-  content: " ";
-  text-shadow: none;
-  background-color: #999;
-  width: 140px;
 }
 
 @media screen and (max-width: 600px) {
