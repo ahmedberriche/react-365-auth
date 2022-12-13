@@ -86,6 +86,7 @@ const Home = ({ _ }) => {
         modalData={modalData}
         handleClose={handleClose}
         isOpenModal={isOpenModal}
+        setError={setIsVisibleAlert}
       />
       <Snackbar
         className={isVisibleAlert ? "alert-dialog" : "d-none"}

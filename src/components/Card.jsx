@@ -1,8 +1,7 @@
-import { Grid } from "@mui/material";
-import React, { useState } from "react";
-import { isMobileDevice } from "../utils";
 import StarIcon from "@mui/icons-material/Star";
-import Alerts from "./Snackbar";
+import { Grid } from "@mui/material";
+import React from "react";
+import { isMobileDevice } from "../utils";
 export default function Card(props) {
   const { image, title, subTitle, cardData, handleOpen, setError } = props;
   const handleRedirect = () => {
@@ -25,6 +24,7 @@ export default function Card(props) {
       <div className="card-backdrop">
         {cardData.map((item, index) => {
           return (
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a
               key={index}
               href={item?.uri.includes("edocperso") ? "#" : item?.uri}

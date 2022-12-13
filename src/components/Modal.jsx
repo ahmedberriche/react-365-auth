@@ -12,7 +12,16 @@ const style = {
   boxShadow: 24,
   p: 4,
 };
-export default function CustomModal({ isOpenModal, handleClose, modalData }) {
+export default function CustomModal({
+  isOpenModal,
+  handleClose,
+  modalData,
+  setError,
+}) {
+  const handleRedirect = () => {
+    setError(true);
+    handleClose();
+  };
   return (
     <Modal
       open={isOpenModal}
@@ -23,10 +32,14 @@ export default function CustomModal({ isOpenModal, handleClose, modalData }) {
       <Box sx={style}>
         {modalData?.map((item, index) => {
           return (
+            // eslint-disable-next-line jsx-a11y/anchor-is-valid
             <a
               key={index}
               href={item?.uri.includes("edocperso") ? "#" : item?.uri}
               className="card-backdrop-main"
+              onClick={() =>
+                item?.uri.includes("edocperso") && handleRedirect()
+              }
             >
               <div
                 className={
