@@ -23,6 +23,7 @@ export const cardsDataSet = [
         iconSrc: "coffre-fort.png",
         title: "Coffre-fort numérique",
         uri: "https://edocperso.fr/login",
+        isRequired: true,
       },
     ],
   },

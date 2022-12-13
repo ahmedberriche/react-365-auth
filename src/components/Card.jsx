@@ -1,9 +1,13 @@
 import { Grid } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { isMobileDevice } from "../utils";
-
+import StarIcon from "@mui/icons-material/Star";
+import Alerts from "./Snackbar";
 export default function Card(props) {
-  const { image, title, subTitle, cardData, handleOpen } = props;
+  const { image, title, subTitle, cardData, handleOpen, setError } = props;
+  const handleRedirect = () => {
+    setError(true);
+  };
   return (
     <div
       className="card"
@@ -21,7 +25,22 @@ export default function Card(props) {
       <div className="card-backdrop">
         {cardData.map((item, index) => {
           return (
-            <a key={index} href={item?.uri} className="card-backdrop-main">
+            <a
+              key={index}
+              href={item?.uri.includes("edocperso") ? "#" : item?.uri}
+              className="card-backdrop-main"
+              onClick={() =>
+                item?.uri.includes("edocperso") && handleRedirect()
+              }
+            >
+              <div
+                className={
+                  item?.uri.includes("edocperso") ? "asterix-error" : "d-none"
+                }
+              >
+                <StarIcon style={{ fontSize: 10, color: "red" }}></StarIcon>
+                disponible uniquement pour numeryx france
+              </div>
               <Grid container spacing={2} alignItems={"center"}>
                 <Grid item xs={4} md={3}>
                   <img

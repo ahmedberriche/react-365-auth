@@ -1,5 +1,7 @@
 import { Box, Grid, Modal } from "@mui/material";
 import React from "react";
+import StarIcon from "@mui/icons-material/Star";
+
 const style = {
   position: "absolute",
   top: "50%",
@@ -21,7 +23,19 @@ export default function CustomModal({ isOpenModal, handleClose, modalData }) {
       <Box sx={style}>
         {modalData?.map((item, index) => {
           return (
-            <a key={index} href={item?.uri} className="card-backdrop-main">
+            <a
+              key={index}
+              href={item?.uri.includes("edocperso") ? "#" : item?.uri}
+              className="card-backdrop-main"
+            >
+              <div
+                className={
+                  item?.uri.includes("edocperso") ? "asterix-error" : "d-none"
+                }
+              >
+                <StarIcon style={{ fontSize: 10, color: "red" }} />
+                disponible uniquement pour numeryx france
+              </div>
               <Grid container spacing={2} alignItems={"center"}>
                 <Grid item xs={4} md={3} textAlign="center">
                   <img

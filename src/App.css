@@ -42,6 +42,7 @@
   display: flex;
   align-items: center;
   padding: 5px;
+  position: relative;
 }
 .card-backdrop-main:hover {
   background: rgba(0, 0, 0, 0.4);
@@ -60,6 +61,34 @@
   object-fit: contain;
 }
 
+.asterix-error {
+  position: absolute;
+  font-size: 10px;
+  top: 0px;
+  left: 40px;
+}
+/*********Alert****************/
+.alert-dialog {
+  position: absolute;
+  top: 65px;
+  width: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  display: block;
+}
+
+.alert-dialog .title {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.alert-dialog a {
+  margin-left: 5px;
+  text-decoration: underline;
+  color: #fab355 !important;
+}
+
 @media screen and (max-width: 1024px) {
   .card-content {
     width: 50%;
@@ -73,6 +102,12 @@
   .card-content {
     width: 100%;
     display: block;
+  }
+  .asterix-error {
+    left: 50px;
+  }
+  .alert-dialog {
+    width: 100%;
   }
 }
 

@@ -8,11 +8,12 @@ import Card from "../components/Card";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MainLayout from "../components/MainLayout";
+import CustomModal from "../components/Modal";
 import Player from "../components/Player";
 import SectionTitle from "../components/SectionTitle";
+import Snackbar from "../components/Snackbar";
 import { cardsDataSet } from "../utils";
 import { fadeInUp, translateY } from "../utils/animation";
-import CustomModal from "../components/Modal";
 
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
@@ -40,12 +41,13 @@ const playerData = [
 const Home = ({ _ }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [modalData, setModalData] = useState(null);
-
+  const [isVisibleAlert, setIsVisibleAlert] = useState(false);
   const handleOpen = (data) => {
     setIsOpenModal(true);
     setModalData(data);
   };
   const handleClose = () => setIsOpenModal(false);
+
   return (
     <div className="home">
       <MainLayout>
@@ -58,7 +60,11 @@ const Home = ({ _ }) => {
               <div className="card-container">
                 {cardsDataSet.map((item, index) => (
                   <div key={index} className="card-content">
-                    <Card {...item} handleOpen={(item) => handleOpen(item)} />
+                    <Card
+                      {...item}
+                      handleOpen={(item) => handleOpen(item)}
+                      setError={setIsVisibleAlert}
+                    />
                   </div>
                 ))}
               </div>
@@ -81,6 +87,18 @@ const Home = ({ _ }) => {
         handleClose={handleClose}
         isOpenModal={isOpenModal}
       />
+      <Snackbar
+        className={isVisibleAlert ? "alert-dialog" : "d-none"}
+        handleCloseAlert={() => setIsVisibleAlert(false)}
+      >
+        <div className="title">
+          disponible uniquement pour numeryx france !
+          <div>
+            Si vous voulez procéder
+            <a href="https://edocperso.fr/login">cliquez ici</a>
+          </div>
+        </div>
+      </Snackbar>
     </div>
   );
 };
