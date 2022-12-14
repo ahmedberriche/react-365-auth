@@ -35,8 +35,8 @@ const CardStyle = styled(Box)({
 });
 
 const playerData = [
-  { src: "http://techslides.com/demos/sample-videos/small.ogv" },
-  { src: "http://techslides.com/demos/sample-videos/small.ogv" },
+  { src: "./videos/Fête-10-ans.webm" },
+  { src: "./videos/Team-building-2022.webm" },
 ];
 const Home = ({ _ }) => {
   const [isOpenModal, setIsOpenModal] = useState(false);
@@ -73,7 +73,13 @@ const Home = ({ _ }) => {
             <motion.div className="player-container" {...fadeInUp}>
               {playerData.map((vid, index) => (
                 <div key={index} className="player-content">
-                  <Player {...vid} />
+                  <Player
+                    controls={true}
+                    muted={true}
+                    autoPlay={true}
+                    loop={true}
+                    {...vid}
+                  />
                 </div>
               ))}
             </motion.div>

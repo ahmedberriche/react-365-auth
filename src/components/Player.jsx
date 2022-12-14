@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Player({ src, index }) {
+export default function Player({ src, ...restProps }) {
   return (
-    <video width="100%" controls>
-      <source src={src} type="video/mp4" />
+    <video width="100%" {...restProps}>
+      <source src={src} />
     </video>
   );
 }
