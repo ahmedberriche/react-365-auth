@@ -16,7 +16,7 @@ export const cardsDataSet = [
       },
       {
         iconSrc: "DocAdm.png",
-        title: "document administratifs",
+        title: "Documents administratifs",
         uri: "https://apps.powerapps.com/play/e/default-f050ee11-8c72-4be6-80ce-5238fb70166a/a/1f6aa88e-2697-4767-a43e-75f98b96f2b2?source=teamsopenwebsite&screenColor=rgba(0,+176,+240,+1)&hint=0492cae0-3b41-4a01-811f-e1ff760ac293",
       },
       {
@@ -56,7 +56,7 @@ export const cardsDataSet = [
     cardData: [
       {
         iconSrc: "problem-claim.png",
-        title: "Porblem Claim",
+        title: "Gestion des réclamations",
         uri: "https://apps.powerapps.com/play/0cc9e371-c2fd-4054-bccc-3c11017bd9f4?tenantId=f050ee11-8c72-4be6-80ce-5238fb70166a",
       },
       {
@@ -79,7 +79,7 @@ export const cardsDataSet = [
       {
         iconSrc: "linkedin.png",
         title: "LINKEDIN",
-        uri: "https://www.linkedin.com/search/results/all/?heroEntityKey=urn%3Ali%3Aorganization%3A18574742&keywords=numeryx&origin=RICH_QUERY_TYPEAHEAD_HISTORY&position=0&searchId=6e3e7c2a-d776-402e-8da1-070d3a255a7c&sid=5_i",
+        uri: "https://www.linkedin.com/company/numeryx/",
       },
     ],
   },
