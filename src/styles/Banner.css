@@ -56,3 +56,16 @@
   background: rgba(8, 255, 140);
   outline: 0;
 }
+
+@media screen and (max-width: 600px) {
+  .banner-image {
+    background-size: contain;
+  }
+  .button__dots {
+    bottom: 0;
+  }
+  .button__dots li button {
+    height: 10px;
+    width: 20px;
+  }
+}

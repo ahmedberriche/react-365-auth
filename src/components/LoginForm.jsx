@@ -1,21 +1,11 @@
-import React, { useState } from "react";
-import { Link as RouterLink, useLocation, useNavigate } from "react-router-dom";
 import { Form, FormikProvider, useFormik } from "formik";
+import React, { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 
-import {
-  Box,
-  Checkbox,
-  FormControlLabel,
-  IconButton,
-  InputAdornment,
-  Link,
-  Stack,
-  TextField,
-} from "@mui/material";
-import { LoadingButton } from "@mui/lab";
 import { Icon } from "@iconify/react";
-import { motion } from "framer-motion";
+import { LoadingButton } from "@mui/lab";
+import { Box, IconButton, InputAdornment, TextField } from "@mui/material";
 
 let easing = [0.6, -0.05, 0.01, 0.99];
 const animate = {
@@ -64,23 +54,13 @@ const LoginForm = ({ _ }) => {
   return (
     <FormikProvider value={formik}>
       <Form autoComplete="off" noValidate onSubmit={handleSubmit}>
-        <Box
-          component={motion.div}
-          animate={{
-            transition: {
-              staggerChildren: 0.55,
-            },
-          }}
-        >
+        <Box>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               gap: 3,
             }}
-            component={motion.div}
-            initial={{ opacity: 0, y: 40 }}
-            animate={animate}
           >
             <TextField
               fullWidth
@@ -118,12 +98,7 @@ const LoginForm = ({ _ }) => {
             />
           </Box>
 
-          <Box
-            component={motion.div}
-            initial={{ opacity: 0, y: 20 }}
-            animate={animate}
-            my={3}
-          >
+          <Box my={3}>
             <LoadingButton
               fullWidth
               size="large"

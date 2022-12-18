@@ -1,9 +1,8 @@
+import * as msal from "@azure/msal-browser";
 import styled from "@emotion/styled";
 import { Box, Container, Typography } from "@mui/material";
-import { motion } from "framer-motion";
 import React, { useState } from "react";
 import LoginForm from "../components/LoginForm";
-import * as msal from "@azure/msal-browser";
 import { config } from "../config";
 
 const RootStyle = styled("div")({
@@ -76,7 +75,7 @@ const Login = ({ _ }) => {
     <RootStyle>
       <Container maxWidth="sm">
         <ContentStyle>
-          <HeadingStyle component={motion.div} {...fadeInUp}>
+          <HeadingStyle>
             <div>
               <img
                 style={{ width: "30%" }}
@@ -90,11 +89,7 @@ const Login = ({ _ }) => {
           </HeadingStyle>
 
           <LoginForm />
-          <FooterStyle
-            onClick={handleLogin}
-            component={motion.div}
-            {...fadeInUp}
-          >
+          <FooterStyle onClick={handleLogin}>
             <img
               className="login-footer-logo"
               src="assets/images/microsoft-logo.png"

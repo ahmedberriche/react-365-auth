@@ -1,7 +1,6 @@
 import styled from "@emotion/styled";
 import { Box } from "@mui/material";
-import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ChatBot from "../chatbot";
 import Banner from "../components/Banner";
 import Card from "../components/Card";
@@ -13,8 +12,6 @@ import Player from "../components/Player";
 import SectionTitle from "../components/SectionTitle";
 import Snackbar from "../components/Snackbar";
 import { cardsDataSet } from "../utils";
-import { fadeInUp, translateY } from "../utils/animation";
-
 const RootStyle = styled("div")({
   background: "rgb(249, 250, 251)",
   placeItems: "center",
@@ -22,13 +19,13 @@ const RootStyle = styled("div")({
   overflowY: "scroll",
 });
 
-const ContentStyle = styled("div")({
+const ContentStyle = {
   maxWidth: "90%",
   width: "90%",
   minHeight: "100%",
   margin: "auto",
   background: "#fff",
-});
+};
 
 const CardStyle = styled(Box)({
   textAlign: "center",
@@ -48,15 +45,28 @@ const Home = ({ _ }) => {
   };
   const handleClose = () => setIsOpenModal(false);
 
+  useEffect(() => {
+    let hiddenElements = document.querySelectorAll(".reveal");
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("active");
+      });
+    });
+    if (hiddenElements) hiddenElements.forEach((ele) => observer.observe(ele));
+    return () => {
+      hiddenElements.forEach((ele) => observer.unobserve(ele));
+    };
+  }, []);
   return (
     <div className="home">
       <MainLayout>
         <Header />
         <RootStyle>
-          <ContentStyle>
-            <Banner {...translateY} />
+          <div className="" style={ContentStyle}>
+            <Banner />
             <SectionTitle title="ToolBox" />
-            <CardStyle component={motion.div} {...fadeInUp}>
+            <div className="reveal" style={{ textAlign: "center" }}>
               <div className="card-container">
                 {cardsDataSet.map((item, index) => (
                   <div key={index} className="card-content">
@@ -68,9 +78,9 @@ const Home = ({ _ }) => {
                   </div>
                 ))}
               </div>
-            </CardStyle>
+            </div>
             <SectionTitle title="Nos témoins" />
-            <motion.div className="player-container" {...fadeInUp}>
+            <div className="player-container reveal">
               {playerData.map((vid, index) => (
                 <div key={index} className="player-content">
                   <Player
@@ -82,9 +92,9 @@ const Home = ({ _ }) => {
                   />
                 </div>
               ))}
-            </motion.div>
+            </div>
             <ChatBot />
-          </ContentStyle>
+          </div>
           <Footer />
         </RootStyle>
       </MainLayout>

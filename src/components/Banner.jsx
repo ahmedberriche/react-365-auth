@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 import Slider from "react-slick";
 import { cardsDataSet } from "../utils";
 
@@ -14,20 +13,19 @@ const settings = {
   arrows: false,
   dotsClass: "button__dots",
 };
-export default function Banner(props) {
+export default function Banner() {
   return (
-    <motion.div className="banner-container" {...props}>
+    <div className="banner-container reveal">
       <Slider {...settings} className="custom-slides">
         {cardsDataSet.map((item, index) => (
           <div key={index}>
             <div
               style={{ backgroundImage: `url(${item?.image})` }}
               className="banner-image"
-              {...props}
             ></div>
           </div>
         ))}
       </Slider>
-    </motion.div>
+    </div>
   );
 }
