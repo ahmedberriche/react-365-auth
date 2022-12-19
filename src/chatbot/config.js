@@ -17,7 +17,7 @@ const config = {
     // Replaces the default header
     header: (props) => (
       <div className="chatbot-header" style={{}}>
-        This is the header
+        Numeryx Chatbot
         <IconButton
           size="large"
           aria-label="account of current user"
